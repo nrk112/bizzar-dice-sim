@@ -2,12 +2,13 @@
 
 using namespace std;
 
-class Dice
+class Player
 {
 public:
 
 
 private:
+
 
 
 };
