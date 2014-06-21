@@ -4,50 +4,34 @@
 
 using namespace std;
 
+//Loads dice objects into pluralDice vector.
 SetOfDice::SetOfDice()
 {
-	const int numberOfDice = 5;
+	int numberOfDice = (largest - smallest + 1);
 	for (int i = 0; i < numberOfDice; i++)
 	{
 		Dice dice;
 		pluralDice.push_back(dice);
 	}
-	optimalValue = getOptimalValue();
 }
 
 
 int SetOfDice::roll()
 {
-	Dice dice;
-	int total = 0;
-	vector<int> dicev;
-	//dice.getSize(dicev);
-	for (int sides = dicev[0]; sides <= dicev[1]; sides++)
+	int sumOfDice = 0;
+	for (int i = 0; i < pluralDice.size(); i++)
 	{
-	//	total += dice.getValue(sides);
+		sumOfDice += pluralDice[i].roll;
 	}
-	return total;
-}
-double SetOfDice::optimalStrategy(int)
-{
-
-	return 0;
+	return sumOfDice;
 }
 
-double SetOfDice::alwaysReroll(int)
+double SetOfDice::getOptimalValue()
 {
-
-	return 0;
-}
-
-double SetOfDice::neverReroll(int)
-{
-
-	return 0;
-}
-
-float SetOfDice::getOptimalValue()
-{
-
-	return 0;
+	double ev = 0;
+	for (int i = 0; i < pluralDice.size(); i++)
+	{
+		ev += pluralDice[i].expValue();
+	}
+	return ev;
 }

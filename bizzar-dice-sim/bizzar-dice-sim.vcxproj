@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dice.h" />
+    <ClInclude Include="TomRandom.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="setofdice.h" />
     <ClInclude Include="simulation.h" />

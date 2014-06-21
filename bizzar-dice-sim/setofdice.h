@@ -8,15 +8,13 @@ class SetOfDice
 {
 public:
 	SetOfDice();
-	float getOptimalValue();
+	double getOptimalValue();
 	int roll();
-	double optimalStrategy(int);
-	double alwaysReroll(int);
-	double neverReroll(int);
+
 
 private:
 	vector<Dice> pluralDice;
-	float optimalValue;
-
+	int smallest = 4;
+	int largest = 8;
 
 };

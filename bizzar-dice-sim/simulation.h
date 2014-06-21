@@ -1,7 +1,7 @@
 #pragma once
-#include <string>
 #include "player.h"
 #include "setofdice.h"
+#include "TomRandom.h"
 
 using namespace std;
 
@@ -11,12 +11,11 @@ public:
 	double optimalStrategy(int &plays);
 	double alwaysReroll(int &plays);
 	double neverReroll(int &plays);
-	double comparison(double &optimal, double &never);
+	double comparison(int &plays);
+
 
 
 private:
-	Player player;
 	SetOfDice setOfDice;
-
-
+	TomRandom tomRandom;
 };
