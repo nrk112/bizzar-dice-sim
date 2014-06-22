@@ -13,8 +13,6 @@ public:
 	double neverReroll(int &plays);
 	double comparison(int &plays);
 
-
 private:
 	SetOfDice setOfDice;
-	TomRandom tomRandom;
 };

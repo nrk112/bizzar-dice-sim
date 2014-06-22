@@ -1,21 +1,16 @@
 #include "simulation.h"
 #include <iostream>
 #include <string>
-#include <iomanip>
 
 using namespace std;
 
-
 int main()
 {
-
-	int plays = 2000; //Change to 20000 before submission.
+	int plays = 20000;
 	Simulation simulation;
 	string output;
 	string again;
 	int input = 0;
-	double optimal, never;
-
 
 	cout << "Welcome to the Bizzaro World Dice Game Simulator\n"
 		<< "=================================================\n";
@@ -34,16 +29,14 @@ int main()
 		switch (input)
 		{
 		case 1:
-			optimal = simulation.optimalStrategy(plays);
-			never = simulation.neverReroll(plays);
 			output = "The player with the optimal strategy will average a score of ";
-			output += to_string(optimal);
+			output += to_string(simulation.optimalStrategy(plays));
 			output += "!\n";
 			output += "The player that never rerolls the dice will average a score of ";
-			output += to_string(never);
+			output += to_string(simulation.neverReroll(plays));
 			output += "!\n";
 			output += "The player with the optimal strategy will win ";
-			output += to_string((simulation.comparison(plays)/plays)*100);
+			output += to_string(simulation.comparison(plays));
 			output += "% of the time!\n";
 			break;
 		case 2:
@@ -62,7 +55,7 @@ int main()
 			output += "!\n";
 			break;
 		case 5:
-			output = "Thanks for pretending to play!";
+			cout << "Thanks for pretending to play!" << endl;
 			return 0;
 		default:
 			output = "Please enter a number 1 - 5.\n";

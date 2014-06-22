@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//Loads dice objects into pluralDice vector.
+
 SetOfDice::SetOfDice()
 {
 	int numberOfDice = (largest - smallest + 1);
@@ -14,13 +14,12 @@ SetOfDice::SetOfDice()
 	{
 		Dice dice;
 		dice.setSize(currentSize);
+		setExpValue += dice.expValue();   //accumulate expected value for the set of dice.
+		//setExpValue += dice.getExpValue();
 		currentSize++;
-		pluralDice.push_back(dice);
+		pluralDice.push_back(dice);       //Loads dice objects into pluralDice vector.
+		//cout << setExpValue << endl;
 	}
-
-	//Gets expected value of set for optimal value
-
-
 }
 
 
@@ -29,18 +28,7 @@ int SetOfDice::roll()
 	int sumOfDice = 0;
 	for (unsigned int i = 0; i < pluralDice.size(); i++)
 	{
-		sumOfDice += pluralDice[i].roll();
+		sumOfDice += pluralDice[i].roll(tomRandom);
 	}
 	return sumOfDice;
-}
-
-double SetOfDice::getOptimalValue()
-{
-	double ev = 0;
-	for (unsigned int i = 0; i < pluralDice.size(); i++)
-	{
-		ev += pluralDice[i].expValue();
-//		cout << "EV is: " << ev << "\n";
-	}
-	return ev;
 }

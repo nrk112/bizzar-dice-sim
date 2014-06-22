@@ -7,14 +7,13 @@ class Dice
 {
 public:
 	Dice();
-	int roll();
+	int roll(TomRandom&);
 	double expValue();
-	//double getExpValue() { return expectedValue; }
 	void setSize(int& value) { size = value; }
+	double getExpValue() { return expectedValue; }
 	int getSize() { return size; }
 
 private:
 	int size;
-	//double expectedValue;
-	TomRandom tomRandom;
+	double expectedValue = 0.0;
 };

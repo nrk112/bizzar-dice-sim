@@ -5,17 +5,17 @@
 using namespace std;
 
 
-//WHY CAN I NOT SET AN EXPECTED VALUE HERE?
+//WHY CAN I NOT SET A PROPER EXPECTED VALUE HERE?
 Dice::Dice()
 {
-	//for (int i = 1; i <= size; i++)
-	//{
-	//	expectedValue += i*(1.0 / size);
-	//}
+	for (int i = 1; i <= size; i++)
+	{
+		expectedValue += i*(1.0 / size);
+	}
 }
 
 
-int Dice::roll()
+int Dice::roll(TomRandom &tomRandom)
 {
 	return tomRandom.getInt(1,size);
 }
