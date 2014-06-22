@@ -14,7 +14,6 @@ public:
 	double comparison(int &plays);
 
 
-
 private:
 	SetOfDice setOfDice;
 	TomRandom tomRandom;

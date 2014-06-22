@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 
-	int plays = 200; //Change to 20000 before submission.
+	int plays = 2000; //Change to 20000 before submission.
 	Simulation simulation;
 	string output;
 	string again;
@@ -43,7 +43,7 @@ int main()
 			output += to_string(never);
 			output += "!\n";
 			output += "The player with the optimal strategy will win ";
-			output += to_string(simulation.comparison(plays));
+			output += to_string((simulation.comparison(plays)/plays)*100);
 			output += "% of the time!\n";
 			break;
 		case 2:
